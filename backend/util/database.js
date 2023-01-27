@@ -1,12 +1,12 @@
 // set up mysql
-import mysql from 'mysql';
+const mysql = require('mysql');
 
 // fetching configuration details
-import config from '../config/config.json';
+const config = require('../config/config.json');
 
 // creating a constant connection using a pool
 
-export const pool = mysql.createPool({
+const pool = mysql.createPool({
 
     host: config.host,
     user:config.user,
@@ -15,4 +15,4 @@ export const pool = mysql.createPool({
 })
 
 // exporting this so it's available throughout the project
-module.exports = pool.promise();
+module.export = pool.promise();
