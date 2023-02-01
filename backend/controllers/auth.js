@@ -37,6 +37,7 @@ exports.signup = async (req, res, next) => {
 
     } catch (err) {
         if (!err.status){
+            // if status error is not set, we set it
             err.status = 500;
         }
         next(err)
