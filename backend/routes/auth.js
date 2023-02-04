@@ -11,10 +11,14 @@ const router = express.Router()
 const User = require('../models/user');
 
 
+
+const authController = require('../controllers/auth')
+
+
 router.post(
     '/signup',
     [
-        body('name').trim().isEmpty(),
+        body('name').trim().not().isEmpty(),
         //the custom function verifies that a user with same email is already present
         body('email').isEmail().withMessage('Please enter a valid email.').custom(async (email) => {
             const user = await User.find(email);

@@ -1,5 +1,5 @@
 // set up mysql
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 // fetching configuration details
 const config = require('../config/config.json');
@@ -12,7 +12,10 @@ const pool = mysql.createPool({
     user:config.user,
     database: config.database,
     password: config.password
-})
+}
+)
 
 // exporting this so it's available throughout the project
-module.export = pool.promise();
+module.exports = pool.promise();
+
+console.log('database connected')

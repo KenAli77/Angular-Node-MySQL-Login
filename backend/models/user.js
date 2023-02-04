@@ -10,7 +10,7 @@ module.exports = class user {
     
     }
 
-    static findUser(email){
+    static find(email){
         return db.execute(
             'SELECT * FROM users WHERE email = ?', [email]
         )
