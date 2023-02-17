@@ -1,3 +1,17 @@
-<form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate >
+<!-- we use novalidate in order to use validation from our reactiveforms module instead of standard html's -->
 
+<form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate >
+<mat-form-field>
+  <mat-label>First Name</mat-label>
+  <input matInput placeholder="Ex. Jon" formControlName="name">
+</mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Ex. Jon" formControlName="email">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput type="password" placeholder="Ex. Jon" formControlName="password">
+  </mat-form-field>
+  <button type="submit" [disabled]="!signupForm.valid" mat-raised-button class="btn">Signup</button>
 </form>
