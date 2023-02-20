@@ -18,7 +18,7 @@ export class AuthService {
   signup(user:Omit<User,"id">):Observable<User>{
     return this.http.post<User>(this.url,user,).pipe(
       first(),
-      catchError(this.errorHandlerService.handleError<User>())
+      catchError(this.errorHandlerService.handleError<User>("signup"))
     )
   }
 }
