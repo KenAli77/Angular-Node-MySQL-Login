@@ -27,6 +27,7 @@ export class SignupComponent implements OnInit {
   signup():void {
 
     console.log(this.signupForm.value)
+
   }
 
 }

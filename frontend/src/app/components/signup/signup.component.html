@@ -3,15 +3,15 @@
 <form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate >
 <mat-form-field>
   <mat-label>First Name</mat-label>
-  <input matInput placeholder="Ex. Jon" formControlName="name">
+  <input matInput type="text" eplaceholder="Ex. Jon" formControlName="name">
 </mat-form-field>
   <mat-form-field>
     <mat-label>Email</mat-label>
-    <input matInput placeholder="Ex. Jon" formControlName="email">
+    <input matInput type="email" placeholder="Ex. Jon" formControlName="email">
   </mat-form-field>
   <mat-form-field>
     <mat-label>Password</mat-label>
     <input matInput type="password" placeholder="Ex. Jon" formControlName="password">
   </mat-form-field>
-  <button type="submit" [disabled]="!signupForm.valid" mat-raised-button class="btn">Signup</button>
+  <button type="submit" [disabled]="!signupForm.valid" mat-raised-button class="btn" color="accent">Signup</button>
 </form>
